@@ -1,86 +1,33 @@
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-let currentFilter = "all";
+const apiKey = "YOUR_API_KEY";
 
-function saveTasks(){
-localStorage.setItem("tasks",JSON.stringify(tasks));
+async function getWeather() {
+    const city = document.getElementById("city").value;
+
+    if (city === "") {
+        alert("Please enter a city name");
+        return;
+    }
+
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error("City not found");
+        }
+
+        const data = await response.json();
+
+        document.getElementById("result").innerHTML = `
+            <h2>${data.name}, ${data.sys.country}</h2>
+            <p><strong>Temperature:</strong> ${data.main.temp} °C</p>
+            <p><strong>Humidity:</strong> ${data.main.humidity}%</p>
+            <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+            <p><strong>Weather:</strong> ${data.weather[0].description}</p>
+        `;
+    } catch (error) {
+        document.getElementById("result").innerHTML =
+            `<p style="color:red;">${error.message}</p>`;
+    }
 }
-
-function addTask(){
-
-const input=document.getElementById("taskInput");
-
-if(input.value.trim()=="") return;
-
-tasks.push({
-text:input.value,
-completed:false
-});
-
-input.value="";
-
-saveTasks();
-displayTasks();
-}
-
-function displayTasks(){
-
-const list=document.getElementById("taskList");
-list.innerHTML="";
-
-tasks.forEach((task,index)=>{
-
-if(currentFilter==="active" && task.completed) return;
-
-if(currentFilter==="completed" && !task.completed) return;
-
-const li=document.createElement("li");
-
-if(task.completed)
-li.classList.add("completed");
-
-li.innerHTML=`
-<span onclick="toggleTask(${index})">${task.text}</span>
-
-<div>
-<button onclick="editTask(${index})">Edit</button>
-
-<button onclick="deleteTask(${index})">Delete</button>
-</div>
-`;
-
-list.appendChild(li);
-
-});
-
-}
-
-function toggleTask(index){
-tasks[index].completed=!tasks[index].completed;
-saveTasks();
-displayTasks();
-}
-
-function editTask(index){
-
-let newTask=prompt("Edit Task",tasks[index].text);
-
-if(newTask!==null && newTask.trim()!=""){
-tasks[index].text=newTask;
-saveTasks();
-displayTasks();
-}
-
-}
-
-function deleteTask(index){
-tasks.splice(index,1);
-saveTasks();
-displayTasks();
-}
-
-function filterTasks(type){
-currentFilter=type;
-displayTasks();
-}
-
-displayTasks();
