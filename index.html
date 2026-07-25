@@ -3,56 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO Meta Tags -->
-    <title>My Portfolio | Your Name</title>
-    <meta name="description" content="Personal portfolio showcasing skills, projects, education, and contact information.">
-    <meta name="keywords" content="Portfolio, HTML5, CSS, JavaScript, Web Developer">
-    <meta name="author" content="Your Name">
-
-    <!-- Accessibility -->
-    <meta name="theme-color" content="#0d6efd">
+    <title>ShopEasy - Home</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <!-- Header -->
-    <header role="banner">
-        <h1>My Portfolio</h1>
+<header>
+    <div class="logo">ShopEasy</div>
 
-        <nav aria-label="Main Navigation">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Main Content -->
-    <main>
+<section class="hero">
+    <div class="hero-content">
+        <h1>Welcome to ShopEasy</h1>
+        <p>Your one-stop destination for quality products at affordable prices.</p>
 
-        <section aria-labelledby="intro">
-            <h2 id="intro">Welcome</h2>
-            <p>Hello! I am a web development student passionate about building responsive and accessible websites.</p>
-        </section>
+        <a href="products.html" class="btn">Shop Now</a>
+    </div>
+</section>
 
-        <section aria-labelledby="skills">
-            <h2 id="skills">Skills</h2>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-            </ul>
-        </section>
+<section class="features">
 
-    </main>
+    <div class="card">
+        <h2>Quality Products</h2>
+        <p>We offer premium quality products selected for customer satisfaction.</p>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Your Name. All Rights Reserved.</p>
-    </footer>
+    <div class="card">
+        <h2>Fast Delivery</h2>
+        <p>Quick and secure delivery directly to your doorstep.</p>
+    </div>
+
+    <div class="card">
+        <h2>Best Prices</h2>
+        <p>Affordable prices with exciting offers and discounts.</p>
+    </div>
+
+</section>
+
+<section class="welcome">
+
+    <h2>Featured Collection</h2>
+
+    <p>
+        Browse our latest collection of electronics, fashion,
+        accessories and home essentials. Designed with responsive
+        layouts and smooth navigation for the best shopping experience.
+    </p>
+
+</section>
+
+<footer>
+    <p>© 2026 ShopEasy | Web Development Capstone Project</p>
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>

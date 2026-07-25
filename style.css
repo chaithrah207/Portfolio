@@ -1,76 +1,105 @@
-/* CSS Variables */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #222;
-  --primary-color: #0077cc;
-  --card-color: #f4f4f4;
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
+/* Body */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: var(--primary-color);
-  color: white;
-  padding: 20px;
+    background: #0077cc;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
 }
 
 nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  gap: 20px;
+    list-style: none;
+    display: flex;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+nav ul li {
+    margin-left: 20px;
 }
 
-/* Grid Layout */
-main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  padding: 20px;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-section {
-  background: var(--card-color);
-  padding: 20px;
-  border-radius: 10px;
+nav ul li a:hover,
+.active {
+    color: yellow;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #222;
-  color: white;
+/* Hero */
+.hero {
+    background: linear-gradient(to right, #0077cc, #00b4d8);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
 }
 
-/* Mobile First */
-@media (max-width: 768px) {
-  main {
-    grid-template-columns: 1fr;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
+.hero h1 {
+    font-size: 45px;
+    margin-bottom: 20px;
 }
 
-/* Dark Theme */
-.dark-mode {
-  --bg-color: #121212;
-  --text-color: #ffffff;
-  --primary-color: #333;
-  --card-color: #1e1e1e;
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
 }
+
+.btn {
+    background: white;
+    color: #0077cc;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: yellow;
+}
+
+/* Sections */
+.features,
+.products,
+.about-section,
+.contact-section,
+.welcome {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Cards */
+.features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 280px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(

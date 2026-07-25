@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">ShopEasy</div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html" class="active">Products</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="products">
+
+    <h1>Our Products</h1>
+
+    <input type="text" id="search" placeholder="Search products..." onkeyup="searchProducts()">
+
+    <div class="product-container">
+
+        <div class="product-card">
+            <img src="images/product1.jpg" alt="Laptop">
+            <h3>Laptop</h3>
+            <p>$800</p>
+            <button onclick="addToCart('Laptop')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product2.jpg" alt="Smartphone">
+            <h3>Smartphone</h3>
+            <p>$500</p>
+            <button onclick="addToCart('Smartphone')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product3.jpg" alt="Headphones">
+            <h3>Headphones</h3>
+            <p>$120</p>
+            <button onclick="addToCart('Headphones')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product4.jpg" alt="Watch">
+            <h3>Smart Watch</h3>
+            <p>$180</p>
+            <button onclick="addToCart('Smart Watch')">Add to Cart</button>
+        </div>
+
+        <div class="product-card">
+            <img src="images/product5.jpg" alt="Shoes">
+            <h3>Running Shoes</h3>
+            <p>$90</p>
+            <button onclick="addToCart('Running Shoes')">Add to Cart</button>
