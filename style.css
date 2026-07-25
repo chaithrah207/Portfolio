@@ -1,0 +1,76 @@
+/* CSS Variables */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --primary-color: #0077cc;
+  --card-color: #f4f4f4;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* Header */
+header {
+  background: var(--primary-color);
+  color: white;
+  padding: 20px;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Grid Layout */
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+section {
+  background: var(--card-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: white;
+}
+
+/* Mobile First */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Dark Theme */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --primary-color: #333;
+  --card-color: #1e1e1e;
+}
